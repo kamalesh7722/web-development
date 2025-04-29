@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Course App UI</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #e0f1f1;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.app-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.phone {
+  background: white;
+  width: 300px;
+  border-radius: 20px;
+  padding: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.header {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.course-img {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.course-title {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.mentor {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.mentor span {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.tabs {
+  display: flex;
+  gap: 20px;
+  border-bottom: 1px solid #eee;
+  margin: 10px 0;
+}
+
+.tabs span {
+  padding-bottom: 5px;
+  cursor: pointer;
+  color: #888;
+}
+
+.tabs .active {
+  border-bottom: 2px solid red;
+  color: red;
+}
+
+.content h4 {
+  font-size: 14px;
+  margin: 10px 0 5px;
+}
+
+.content ul {
+  padding-left: 16px;
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-weight: bold;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.course-card {
+  background: #f4f4f4;
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.course-card.red {
+  background: #fce4e4;
+  color: #c2185b;
+}
+
+.course-card.gray {
+  background: #f0f0f0;
+  color: #444;
+}
+
+.progress {
+  font-size: 12px;
+  color: #555;
+  margin-top: 5px;
+}
+
+.lesson-list .lesson {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8f8f8;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 6px;
+}
+
+.circle {
+  width: 32px;
+  height: 32px;
+  background: #eee;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 32px;
+  font-weight: bold;
+}
+
+.lesson .text {
+  flex: 1;
+}
+
+.lesson .text strong {
+  font-size: 14px;
+}
+
+.lesson .text p {
+  font-size: 12px;
+  color: #888;
+}
+
+.play-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.bottom-nav {
+  margin-top: auto;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0 0;
+  font-size: 12px;
+}
+
+.bottom-nav span {
+  color: #888;
+  cursor: pointer;
+}
+
+.bottom-nav .active {
+  color: red;
+  font-weight: bold;
+}
+
+    </style>
+
+</head>
+<body>
+  <div class="app-container">
+
+    <!-- Course Detail Card -->
+    <div class="phone">
+      <div class="header">Course Details</div>
+      <img src="https://via.placeholder.com/300x150" alt="Course Image" class="course-img"/>
+      <div class="course-title">UI UX Design For Beginner</div>
+      <div class="mentor">Noa<br><span>UI UX Design Mentor</span></div>
+
+      <div class="tabs">
+        <span class="active">Details</span>
+        <span>Lessons</span>
+        <span>Reviews</span>
+      </div>
+
+      <div class="content">
+        <h4>What You’ll Learn</h4>
+        <ul>
+          <li>Introduction to User Research</li>
+          <li>Elements of UX</li>
+          <li>Role of research in UX design process</li>
+          <li>Overview of research methods</li>
+          <li>Introduction to heuristic testing</li>
+          <li>Reading user personas and empathy maps</li>
+        </ul>
+        <h4>Fundamentals of UX Design</h4>
+        <ul>
+          <li>Information architecture and sitemaps</li>
+          <li>User journey maps</li>
+          <li>Understanding navigation</li>
+          <li>Interaction design: task flows</li>
+          <li>Overview of grids & page types</li>
+          <li>Developing low/high fidelity wireframes</li>
+        </ul>
+      </div>
+
+      <div class="bottom-nav">
+        <span class="active">📚 Courses</span>
+        <span>📅 Events</span>
+        <span>💬 Chat</span>
+        <span>👤 Profile</span>
+      </div>
+    </div>
+
+    <!-- My Courses Card -->
+    <div class="phone">
+      <div class="header">My Courses</div>
+      <div class="section-title">Progress lesson</div>
+
+      <div class="course-card red">
+        <div>
+          <strong>UI UX Design For Beginner</strong>
+          <p>Noa<br><small>UI UX Design Mentor</small></p>
+        </div>
+        <div class="progress">
+          <span>07/25 Progress</span>
+          <span>5h,30 mins</span>
+        </div>
+      </div>
+
+      <div class="course-card gray">
+        <div>
+          <strong>Graphic Design</strong>
+          <p>May<br><small>Graphic Design Mentor</small></p>
+        </div>
+        <div class="progress">
+          <span>12/25 Progress</span>
+          <span>7h,30 mins</span>
+        </div>
+      </div>
+
+      <div class="section-title">Recent lesson</div>
+      <div class="lesson-list">
+        <div class="lesson">
+          <span class="circle">01</span>
+          <div class="text">
+            <strong>Introduction</strong>
+            <p>UI UX Design For Beginner</p>
+          </div>
+          <button class="play-btn">▶️</button>
+        </div>
+        <div class="lesson">
+          <span class="circle">02</span>
+          <div class="text">
+            <strong>What is UI UX</strong>
+            <p>UI UX Design For Beginner</p>
+          </div>
+          <button class="play-btn">▶️</button>
+        </div>
+        <div class="lesson">
+          <span class="circle">03</span>
+          <div class="text">
+            <strong>Design Principles</strong>
+            <p>UI UX Design For Beginner</p>
+          </div>
+          <button class="play-btn">▶️</button>
+        </div>
+      </div>
+
+      <div class="bottom-nav">
+        <span class="active">📚 Courses</span>
+        <span>📅 Events</span>
+        <span>💬 Chat</span>
+        <span>👤 Profile</span>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
