@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Travel Booking UI</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #c2185b, #e91e63);
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  color: #c2185b;
+  border-radius: 20px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.card h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-box {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.calendar {
+  background: #fce4ec;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.today {
+  background: #e91e63;
+  padding: 5px 10px;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.calendar-body {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.seats p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.seat-options span {
+  display: inline-block;
+  margin: 4px;
+  padding: 6px 10px;
+  background: #f8bbd0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.seat-options .selected {
+  background: #e91e63;
+  color: #fff;
+}
+
+.proceed-btn {
+  width: 100%;
+  padding: 12px;
+  background: #e91e63;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.recent {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #888;
+}
+
+.route {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.route small {
+  font-size: 12px;
+  color: #999;
+}
+
+.travel-date {
+  text-align: center;
+  margin: 10px 0;
+  font-weight: bold;
+  color: #e91e63;
+}
+
+.seats-selected {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.trip-card {
+  background: #fce4ec;
+  color: #c2185b;
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.trip-card .left {
+  flex: 1;
+}
+
+.trip-card .right {
+  text-align: right;
+  flex: 1;
+}
+
+.trip-card .price {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.trip-card.small {
+  font-size: 14px;
+  background: #f8bbd0;
+}
+
+.book-now {
+  background: #e91e63;
+  color: #fff;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Select Destination Panel -->
+    <div class="card">
+      <h3>Select your destination</h3>
+      <input type="text" placeholder="From" class="input-box" />
+      <input type="text" placeholder="To" class="input-box" />
+
+      <div class="calendar">
+        <div class="calendar-header">
+          <span class="today">TODAY</span>
+          <span class="month">DECEMBER 2016</span>
+        </div>
+        <div class="calendar-body">
+          <div class="day">THU</div>
+          <div class="date">28</div>
+        </div>
+        <div class="seats">
+          <p>SEATS</p>
+          <div class="seat-options">
+            <span>1</span><span>2</span><span>3</span>
+            <span class="selected">4</span>
+            <span>5</span><span>6</span><span>7</span><span>8</span>
+          </div>
+        </div>
+      </div>
+
+      <button class="proceed-btn">PROCEED</button>
+      <div class="recent">RECENT BOOKING</div>
+    </div>
+
+    <!-- Travel Detail Panel -->
+    <div class="card">
+      <h3>Travel Detail</h3>
+      <div class="route">
+        <span>BLR<br><small>Bangalore</small></span>
+        <span class="bus-icon">🚌</span>
+        <span>PNY<br><small>Pondicherry</small></span>
+      </div>
+      <div class="travel-date">29 Dec 2016</div>
+
+      <div class="seats-selected">Seats <strong>3</strong></div>
+
+      <div class="trip-card">
+        <div class="left">
+          <p class="company">VRL</p>
+          <p class="time">10:30 PM → 06:30 AM</p>
+          <p class="features">Sleeper | AC</p>
+        </div>
+        <div class="right">
+          <p class="price">INR 1,400</p>
+          <p class="duration">Duration: 8hrs</p>
+          <p class="seats-available">12 Available Seats</p>
+        </div>
+      </div>
+
+      <button class="book-now">BOOK NOW</button>
+
+      <!-- Additional options -->
+      <div class="trip-card small">
+        <div class="left">
+          <p class="company">Greenline</p>
+          <p class="time">09:30 PM → 05:30 AM</p>
+        </div>
+        <div class="right">
+          <p class="price">INR 1,500</p>
+        </div>
+      </div>
+
+      <div class="trip-card small">
+        <div class="left">
+          <p class="company">KPN</p>
+          <p class="time">10:30 PM → 06:30 AM</p>
+        </div>
+        <div class="right">
+          <p class="price">INR 980</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
