@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up Page</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fff;
+  }
+  
+  .container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .left-panel {
+    width: 50%;
+    background: #20c997;
+    color: white;
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .left-panel h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #000;
+  }
+  
+  .left-panel img {
+    width: 80%;
+    max-width: 400px;
+  }
+  
+  .right-panel {
+    width: 50%;
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .right-panel h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .name-fields {
+    display: flex;
+    gap: 10px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  select {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #d2f4ef;
+    width: 100%;
+  }
+  
+  .password-wrapper {
+    position: relative;
+  }
+  
+  .eye-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  .birthday {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .gender {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .terms {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+  }
+  
+  button {
+    background: #009dff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  </style>
+  
+</head>
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <h2>Discover the world’s top<br><strong>Designers & Creatives</strong></h2>
+      <img src="signup.png" alt="Illustration" />
+    </div>
+    <div class="right-panel">
+      <h1>Create a new account</h1>
+      <form>
+        <div class="name-fields">
+          <input type="text" placeholder="First name" />
+          <input type="text" placeholder="Last name" />
+        </div>
+        <input type="email" placeholder="Email" />
+        <div class="password-wrapper">
+          <input type="password" placeholder="Password" />
+          <span class="eye-icon">👁️</span>
+        </div>
+
+        <label>Birthday</label>
+        <div class="birthday">
+          <select>
+            <option>Jan</option>
+          </select>
+          <select>
+            <option>15</option>
+          </select>
+          <select>
+            <option>1998</option>
+          </select>
+        </div>
+
+        <label>Gender</label>
+        <div class="gender">
+          <label><input type="radio" name="gender" /> Male</label>
+          <label><input type="radio" name="gender" /> Female</label>
+          <label><input type="radio" name="gender" /> Custom</label>
+        </div>
+
+        <div class="terms">
+          <input type="checkbox" />
+          <span>Creating an account means you're okay with our Terms of Service, Privacy Policy and our default Notification Settings</span>
+        </div>
+
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
