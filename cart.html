@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BuyMore Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f7fa;
+  color: #333;
+}
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: white;
+  padding: 20px;
+  border-right: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links a {
+  display: block;
+  margin: 10px 0;
+  padding: 8px;
+  color: #444;
+  border-radius: 6px;
+}
+
+.nav-links .active {
+  background: #1a73e8;
+  color: white;
+}
+
+.quick-actions button {
+  margin: 5px 0;
+  padding: 6px 10px;
+  border: none;
+  background: #eee;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.orders ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.logout {
+  margin-top: auto;
+  padding: 10px;
+  background: #fff0f0;
+  color: #d00;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Main */
+.main {
+  flex: 1;
+  padding: 20px 40px;
+}
+
+/* Top Bar */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-controls .tab {
+  padding: 8px 16px;
+  border: none;
+  margin-left: 10px;
+  border-radius: 20px;
+  background: #eee;
+  cursor: pointer;
+}
+
+.top-controls .active {
+  background: #1a73e8;
+  color: white;
+}
+
+.user-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatars img {
+  width: 30px;
+  border-radius: 50%;
+  margin-left: -10px;
+}
+
+.user-name {
+  font-weight: 500;
+}
+
+/* Explore Section */
+.explore-header {
+  margin: 30px 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filters button {
+  margin-left: 10px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 20px;
+  background: #eee;
+  cursor: pointer;
+}
+
+.filters .active {
+  background: #000;
+  color: white;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.promo {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 25px;
+  height: 180px;
+}
+
+.promo.green {
+  background: #a0eec0;
+}
+
+.promo.yellow {
+  background: #ffe07a;
+  color: #333;
+}
+
+.promo button {
+  background: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.product .pick {
+  font-size: 12px;
+  color: gray;
+  margin-top: 10px;
+}
+
+.product .price {
+  display: inline-block;
+  margin-top: 10px;
+  background: #1a73e8;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+.profile button {
+  margin-top: 10px;
+  background: #f44336;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.fav {
+  text-align: center;
+}
+
+.fav .avatars {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.banner {
+  text-align: center;
+  padding: 30px;
+  background: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2 class="logo">BuyMore</h2>
+      <nav class="nav-links">
+        <a href="#">Popular Products</a>
+        <a class="active" href="#">Explore New</a>
+        <a href="#">Clothing and Shoes</a>
+        <a href="#">Gifts and Living</a>
+        <a href="#">Inspiration</a>
+      </nav>
+
+      <div class="quick-actions">
+        <p>Quick actions</p>
+        <button>+ Request for product</button>
+        <button>+ Add member</button>
+      </div>
+
+      <div class="orders">
+        <p>Last orders <span>37</span></p>
+        <ul>
+          <li>DXC Nike... <a href="#">view order</a></li>
+          <li>Outerwear... <a href="#">view order</a></li>
+        </ul>
+        <a href="#">See all</a>
+      </div>
+
+      <button class="logout">← Log out</button>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <header class="top-bar">
+        <div class="orders-summary">
+          <h3>37 <small>Orders</small></h3>
+          <p>Last 7 days</p>
+        </div>
+        <div class="top-controls">
+          <button class="tab active">Dashboard</button>
+          <button class="tab">Website</button>
+        </div>
+        <div class="user-area">
+          <div class="cart">🛒 Cart</div>
+          <div class="avatars">
+            <img src="https://i.pravatar.cc/30?img=1" />
+            <img src="https://i.pravatar.cc/30?img=2" />
+          </div>
+          <div class="user-name">Ryana</div>
+        </div>
+      </header>
+
+      <section class="explore-section">
+        <div class="explore-header">
+          <h2>Explore</h2>
+          <div class="filters">
+            <button class="active">All</button>
+            <button>Men</button>
+            <button>Women</button>
+            <button class="search">🔍</button>
+          </div>
+        </div>
+
+        <div class="grid">
+          <!-- Promo Banner -->
+          <div class="card promo green">
+            <h3>GET UP TO 50% OFF</h3>
+            <button>Get Discount</button>
+          </div>
+
+          <div class="card promo yellow">
+            <h3>Winter’s weekend</h3>
+            <p>keep it casual</p>
+          </div>
+
+          <!-- Product Cards -->
+          <div class="card product">
+            <img src=" " alt="Sandal" />
+            <p class="pick">Our Picks</p>
+            <h4>WMX Rubber Zebra sandal</h4>
+            <span class="price">$36</span>
+          </div>
+
+          <div class="card product">
+            <img src=" " alt="Shoes" />
+            <p class="pick">Your Choice</p>
+            <h4>Supper Skinny jogger in brown</h4>
+            <span class="price">$89</span>
+          </div>
+
+          <!-- Profile & Favorites -->
+          <div class="card profile">
+            <img src=" " alt="Profile" />
+            <button>Avail Offers</button>
+          </div>
+
+          <div class="card fav">
+            <h4>Favourites</h4>
+            <div class="avatars">
+              <img src=" " />
+              <img src=" " />
+            </div>
+            <button>See All</button>
+          </div>
+
+          <!-- Final Banner -->
+          <div class="card banner">
+            <h3>Bring Bold Fashion</h3>
+            <p>Layers on Layers</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
