@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bus Booking UI</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f6f8;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.header {
+  background: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.header h1 {
+  color: #d92d2d;
+}
+
+.header nav a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #444;
+  font-size: 14px;
+}
+
+.search-bar {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.search-bar input[type="text"],
+.search-bar input[type="date"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  flex: 1;
+}
+
+.search-bar button {
+  background: #e63946;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.main-content {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+}
+
+.sidebar {
+  width: 250px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.sidebar .filter-group {
+  margin-bottom: 20px;
+}
+
+.sidebar label {
+  display: block;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.bus-listing {
+  flex: 1;
+}
+
+.sort-bar {
+  background: #fff;
+  padding: 10px 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.sort-bar span {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.sort-bar button {
+  background: #eee;
+  border: none;
+  padding: 6px 12px;
+  margin-right: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.bus-card {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.bus-info {
+  max-width: 70%;
+}
+
+.bus-info h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.tag.new {
+  background: #3ac569;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  margin-left: 8px;
+  border-radius: 4px;
+}
+
+.rating {
+  font-size: 14px;
+  color: #4caf50;
+}
+
+.features {
+  font-size: 13px;
+  color: #777;
+  margin: 6px 0;
+}
+
+.time {
+  font-size: 14px;
+  color: #333;
+}
+
+.duration {
+  font-size: 12px;
+  color: #888;
+}
+
+.bus-price {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.select-btn {
+  background: #ff5b5b;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.seats-left {
+  font-size: 12px;
+  color: green;
+  margin-top: 4px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1>abhibus</h1>
+      <nav>
+        <a href="#">Buses</a>
+        <a href="#">Flights</a>
+        <a href="#">Trains</a>
+        <a href="#">Hotels</a>
+        <a href="#">Offers</a>
+        <a href="#">Track Ticket</a>
+        <a href="#">Need Help?</a>
+        <a href="#">Login/Signup</a>
+      </nav>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input type="text" placeholder="From: Hyderabad">
+      <input type="text" placeholder="To: Bangalore">
+      <input type="date" value="2025-04-27">
+      <button>Search</button>
+    </div>
+
+    <main class="main-content">
+      <!-- Sidebar Filters -->
+      <aside class="sidebar">
+        <h3>Filters</h3>
+        <div class="filter-group">
+          <p>Bus Type</p>
+          <label><input type="checkbox"/> AC</label>
+          <label><input type="checkbox"/> Sleeper</label>
+          <label><input type="checkbox"/> Seater</label>
+          <label><input type="checkbox"/> Non AC</label>
+        </div>
+        <div class="filter-group">
+          <p>Price Range</p>
+          <input type="range" min="674" max="3999"/>
+        </div>
+        <div class="filter-group">
+          <p>Departure Time</p>
+          <label><input type="checkbox"/> Before 10 AM</label>
+          <label><input type="checkbox"/> 10 AM - 5 PM</label>
+          <label><input type="checkbox"/> 5 PM - 11 PM</label>
+          <label><input type="checkbox"/> After 11 PM</label>
+        </div>
+      </aside>
+
+      <!-- Bus Listings -->
+      <section class="bus-listing">
+        <div class="sort-bar">
+          <span>Sort by:</span>
+          <button>Price</button>
+          <button>Seats</button>
+          <button>Ratings</button>
+          <button>Arrival</button>
+          <button>Departure</button>
+        </div>
+
+        <!-- Example Bus Card -->
+        <div class="bus-card">
+          <div class="bus-info">
+            <h3>Yolo Bus <span class="tag new">Brand New</span></h3>
+            <p>Bharat Benz AC Sleeper (2+1)</p>
+            <div class="rating">⭐ 4.6 (42,522)</div>
+            <div class="features">Tracking · 5+ Amenities · Boarding & Dropping</div>
+            <div class="time">
+              <strong>00:15</strong> Hyderabad → <strong>12:04</strong> Bangalore
+              <span class="duration">(11h 49m)</span>
+            </div>
+          </div>
+          <div class="bus-price">
+            <p>From <strong>₹1,030</strong></p>
+            <button class="select-btn">Select Seats</button>
+            <span class="seats-left">27 Seats Available</span>
+          </div>
+        </div>
+
+        <!-- Another Bus -->
+        <div class="bus-card">
+          <div class="bus-info">
+            <h3>SL Travels</h3>
+            <p>2+1, Sleeper, NON-AC</p>
+            <div class="rating">⭐ 4.3 (1,823)</div>
+            <div class="features">Tracking · 5+ Amenities · Boarding & Dropping</div>
+            <div class="time">
+              <strong>19:00</strong> Hyderabad → <strong>05:00</strong> Bangalore
+              <span class="duration">(10h)</span>
+            </div>
+          </div>
+          <div class="bus-price">
+            <p>From <strong>₹1,509</strong></p>
+            <button class="select-btn">Select Seats</button>
+            <span class="seats-left">15 Seats Available</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
