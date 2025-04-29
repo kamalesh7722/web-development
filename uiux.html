@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task Manager UI</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #f8f9fa, #f1f3f5);
+  padding: 20px;
+}
+
+.app-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.avatar {
+  width: 50px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.header {
+  text-align: center;
+}
+
+.highlight {
+  color: orange;
+}
+
+.search {
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+}
+
+.last-added span {
+  display: block;
+  background: #f1f3f5;
+  margin: 4px 0;
+  padding: 6px;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.task .progress {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.task .status {
+  width: 8px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.status.red {
+  background: red;
+}
+.status.green {
+  background: green;
+}
+.status.yellow {
+  background: orange;
+}
+
+.create-btn {
+  background: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+input[type="text"],
+input[type="datetime-local"],
+textarea {
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+textarea {
+  height: 80px;
+  resize: none;
+}
+
+.priority button {
+  padding: 5px 10px;
+  margin-right: 5px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.priority .high {
+  background: #f44336;
+}
+.priority .medium {
+  background: #ffa726;
+}
+.priority .low {
+  background: #66bb6a;
+}
+
+.subtask-btn {
+  padding: 6px 10px;
+  background: #f28c54;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.add-task,
+.edit-task {
+  background: #ef5350;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  flex: 1;
+}
+
+.clear {
+  background: #ccc;
+  color: #333;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  flex: 1;
+}
+
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Left Panel -->
+    <div class="card">
+      <div class="header">
+        <img src="https://via.placeholder.com/50" alt="User Avatar" class="avatar" />
+        <h3>Hello, <span class="highlight">Damian</span></h3>
+        <p>Manage your tasks!</p>
+        <input type="text" placeholder="Search..." class="search" />
+      </div>
+      <h4>Last added</h4>
+      <div class="last-added">
+        <span>Football Cup training drybling</span>
+        <span>UI/UX App Design</span>
+        <span>UI/UX App Design</span>
+      </div>
+      <h4>Tasks list</h4>
+      <div class="task">
+        <span class="progress">75%</span>
+        <span>UI/UX App Design</span>
+        <div class="status red"></div>
+      </div>
+      <div class="task">
+        <span class="progress">75%</span>
+        <span>UI/UX App Design</span>
+        <div class="status green"></div>
+      </div>
+      <div class="task">
+        <span class="progress">75%</span>
+        <span>View candidates' resumes</span>
+        <div class="status yellow"></div>
+      </div>
+      <div class="task">
+        <span class="progress">75%</span>
+        <span>Football Cup training Drybling</span>
+        <div class="status red"></div>
+      </div>
+      <button class="create-btn">Create task</button>
+    </div>
+
+    <!-- Middle Panel: Create Task -->
+    <div class="card">
+      <h2>Create new task</h2>
+      <label>Main task name</label>
+      <input type="text" value="UI/UX App Design" />
+
+      <label>Due date</label>
+      <input type="datetime-local" value="2023-04-29T00:30" />
+
+      <label>Choose priority</label>
+      <div class="priority">
+        <button class="high">High</button>
+        <button class="medium">Medium</button>
+        <button class="low">Low</button>
+      </div>
+
+      <label>Sub-task name</label>
+      <input type="text" value="Prototyping" />
+      <input type="text" value="Animate the logo" />
+      <button class="subtask-btn">Add sub-task</button>
+
+      <label>Description</label>
+      <textarea>First I have to animate the logo and later prototyping my design. It's very important.</textarea>
+
+      <div class="action-buttons">
+        <button class="add-task">Add task</button>
+        <button class="clear">Clear</button>
+      </div>
+    </div>
+
+    <!-- Right Panel: Edit Task -->
+    <div class="card">
+      <h2>Edit task</h2>
+      <label>Main task name</label>
+      <input type="text" value="UI/UX App Design" />
+
+      <label>Due date</label>
+      <input type="datetime-local" value="2023-04-29T00:30" />
+
+      <label>Choose priority</label>
+      <div class="priority">
+        <button class="high">High</button>
+        <button class="medium">Medium</button>
+        <button class="low">Low</button>
+      </div>
+
+      <label>Sub-task name</label>
+      <input type="text" value="Prototyping" />
+      <input type="text" value="Animate the logo" />
+      <button class="subtask-btn">Add sub-task</button>
+
+      <label>Description</label>
+      <textarea>First I have to animate the logo and later prototyping my design. It's very important.</textarea>
+
+      <div class="action-buttons">
+        <button class="edit-task">Edit task</button>
+        <button class="clear">Clear</button>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
