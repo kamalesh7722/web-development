@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz App UI</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #d9ecff;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.app-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.screen {
+  width: 320px;
+  border-radius: 28px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.white-screen {
+  background: #fff;
+  padding: 20px;
+}
+
+.blue-screen {
+  background: linear-gradient(to bottom, #33c4ff, #a6e1f8);
+  color: white;
+  padding: 20px;
+}
+
+.header h2 {
+  margin: 0;
+}
+.header p {
+  margin-top: 4px;
+  font-size: 13px;
+  color: gray;
+}
+.avatar {
+  width: 40px;
+  height: 40px;
+  background: url('https://img.icons8.com/color/96/user-male-circle--v1.png') no-repeat center;
+  background-size: cover;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.stat-box {
+  width: 48%;
+  background: #f1f1f1;
+  text-align: center;
+  border-radius: 12px;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+.section-title {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.category {
+  background: #f8f8f8;
+  border-radius: 18px;
+  text-align: center;
+  padding: 12px 4px;
+  font-size: 14px;
+}
+
+.category img {
+  width: 50px;
+  height: 50px;
+}
+
+.category p {
+  margin: 5px 0 0;
+}
+.category span {
+  font-size: 12px;
+  color: gray;
+}
+
+.leaderboard-header h2 {
+  margin-bottom: 10px;
+}
+
+.tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.tabs span {
+  background: rgba(255,255,255,0.2);
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.tabs .active {
+  background: #fff;
+  color: #33c4ff;
+  font-weight: bold;
+}
+
+.top-3 {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.user {
+  text-align: center;
+}
+.user img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+.user.main img {
+  width: 70px;
+  height: 70px;
+  border-color: gold;
+}
+.user p {
+  margin: 2px 0;
+  font-weight: bold;
+}
+.user span {
+  font-size: 12px;
+}
+
+.leaderboard-list {
+  background: #fff;
+  color: #333;
+  border-radius: 20px;
+  padding: 10px 15px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.item span {
+  font-weight: bold;
+  margin-right: 10px;
+}
+.item b {
+  color: #34aaff;
+}
+
+  </style>
+</head>
+<body>
+  <div class="app-container">
+
+    <!-- Left: Dashboard -->
+    <div class="screen white-screen">
+      <div class="header">
+        <h2>Hi, John</h2>
+        <p>Let's make this day productive</p>
+        <div class="avatar"></div>
+      </div>
+
+      <div class="stats">
+        <div class="stat-box">
+          🏆<br/>
+          <span>Ranking</span>
+          <h4>348</h4>
+        </div>
+        <div class="stat-box">
+          🪙<br/>
+          <span>Points</span>
+          <h4>1209</h4>
+        </div>
+      </div>
+
+      <h3 class="section-title">Let's play</h3>
+
+      <div class="category-grid">
+        <div class="category">
+          <img src="https://img.icons8.com/color/96/basketball.png" alt="Sports"/>
+          <p>Sports<br><span>50 questions</span></p>
+        </div>
+        <div class="category">
+          <img src="https://img.icons8.com/color/96/test-tube.png" alt="Chemistry"/>
+          <p>Chemistry<br><span>30 questions</span></p>
+        </div>
+        <div class="category">
+          <img src="https://img.icons8.com/color/96/calculator.png" alt="Math"/>
+          <p>Math<br><span>95 questions</span></p>
+        </div>
+        <div class="category">
+          <img src="https://img.icons8.com/color/96/planner.png" alt="History"/>
+          <p>History<br><span>128 questions</span></p>
+        </div>
+        <div class="category">
+          <img src="https://img.icons8.com/color/96/dna-2.png" alt="Biology"/>
+          <p>Biological<br><span>&nbsp;</span></p>
+        </div>
+        <div class="category">
+          <img src="https://img.icons8.com/color/96/worldwide-location.png" alt="Geography"/>
+          <p>Geography<br><span>&nbsp;</span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Leaderboard -->
+    <div class="screen blue-screen">
+      <div class="leaderboard-header">
+        <h2>Leaderboard</h2>
+        <div class="tabs">
+          <span class="active">All time</span>
+          <span>This week</span>
+          <span>Month</span>
+        </div>
+        <div class="top-3">
+          <div class="user small">
+            <img src="https://randomuser.me/api/portraits/men/45.jpg" />
+            <span>Lennert Niva</span>
+            <p>120.774</p>
+          </div>
+          <div class="user main">
+            <img src="https://randomuser.me/api/portraits/men/1.jpg" />
+            <span>David James</span>
+            <p>145.093</p>
+          </div>
+          <div class="user small">
+            <img src="https://randomuser.me/api/portraits/men/67.jpg" />
+            <span>Peter</span>
+            <p>95.876</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="leaderboard-list">
+        <div class="item"><span>4</span> Smith Carol <b>91.736</b></div>
+        <div class="item"><span>5</span> Stina Gunnarsdottir <b>90.281</b></div>
+        <div class="item"><span>6</span> Benedikt Safyulin <b>88.463</b></div>
+        <div class="item"><span>7</span> Gabriel Soares <b>85.287</b></div>
+        <div class="item"><span>8</span> Yahiro Ayuko <b>84.009</b></div>
+        <div class="item"><span>9</span> Saami Al Samad <b>83.292</b></div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
